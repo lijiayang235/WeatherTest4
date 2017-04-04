@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="出行建议"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_margin="15sp"
+        />
+    <TextView
+        android:id="@+id/comfort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="comfort"
+        android:textColor="#fff"
+
+        android:layout_margin="15sp"
+        />
+    <TextView
+        android:id="@+id/carwash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="carwash"
+        android:textColor="#fff"
+
+        android:layout_margin="15sp"
+        />
+    <TextView
+        android:id="@+id/sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sport"
+        android:textColor="#fff"
+
+        android:layout_margin="15sp"
+        />
+</LinearLayout>

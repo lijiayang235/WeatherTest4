@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">WeatherTest4</string>
+    <string name="app_name">天气4</string>
+    <string name="title_activity_weather_acticity">WeatherActicity</string>
 </resources>

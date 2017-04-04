@@ -3,6 +3,8 @@ package com.example.weathertest4.util;
 import com.example.weathertest4.db.City;
 import com.example.weathertest4.db.County;
 import com.example.weathertest4.db.Province;
+import com.example.weathertest4.gson.Weather;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -66,5 +68,18 @@ public class Utility {
             e.printStackTrace();
         }
         return false;
+    }
+    public static Weather handWeather(String responsText)  {
+        JSONObject jsonObject= null;
+        try {
+            jsonObject = new JSONObject(responsText);
+            JSONArray jsonArray=jsonObject.getJSONArray("HeWeather");
+            JSONObject jsonObject1=jsonArray.getJSONObject(0);
+            return new Gson().fromJson(jsonObject1.toString(),Weather.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+     return  null;
+
     }
 }

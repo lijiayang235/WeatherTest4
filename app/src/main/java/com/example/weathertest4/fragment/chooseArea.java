@@ -1,6 +1,7 @@
 package com.example.weathertest4.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,10 +15,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.weathertest4.MainActivity;
 import com.example.weathertest4.R;
+import com.example.weathertest4.WeatherActicity;
 import com.example.weathertest4.db.City;
 import com.example.weathertest4.db.County;
 import com.example.weathertest4.db.Province;
+import com.example.weathertest4.gson.Weather;
 import com.example.weathertest4.util.HttpSendUrl;
 import com.example.weathertest4.util.Utility;
 
@@ -91,6 +95,17 @@ public class chooseArea extends Fragment {
                     queryCounty();
                 }else  if(currentLevel==COUNTYLEVEL){
                     selectedCounty=countyList.get(position);
+                    if(getActivity() instanceof MainActivity){
+                    Intent intent=new Intent(getContext(), WeatherActicity.class);
+                    intent.putExtra("weatherId",selectedCounty.getWeatherId());
+                    startActivity(intent);
+                        getActivity().finish();
+                    }else if(getActivity() instanceof  WeatherActicity){
+                        WeatherActicity weatherActicity= (WeatherActicity) getActivity();
+                        weatherActicity.requestWeather(selectedCounty.getWeatherId());
+                        weatherActicity.swipLayout.setRefreshing(true);
+                        weatherActicity.drawerLayout.closeDrawers();
+                    }
                 }
 
             }
