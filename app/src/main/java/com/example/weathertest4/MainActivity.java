@@ -21,6 +21,8 @@ import com.baidu.location.LocationClientOption;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.bmob.v3.Bmob;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        Bmob.initialize(this,"dd9cb0fddcdd80936bb70c0b305104a1");
         SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(this);
         String responseText=preferences.getString("weather",null);
         if(responseText!=null){

@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
+//    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.example.weathertest4"
         minSdkVersion 19
@@ -31,4 +33,9 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:design:25.0.1'
     testCompile 'junit:junit:4.12'
+    //3.5.0：请务必查看下面注释[1]
+    compile 'cn.bmob.android:bmob-sdk:3.4.6'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'//CDN文件服务使用okhttp相关包进行文件的上传和下载（必填）
+    compile 'com.squareup.okio:okio:1.4.0'
+//    compile 'cn.bmob.android:http-legacy:1.0'
 }
